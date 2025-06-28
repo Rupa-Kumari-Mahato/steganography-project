@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Steganography</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Steganography</h1>
+
+        <h2>Encode a Message</h2>
+        <form action="/encode" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required><br><br>
+            <textarea name="message" rows="4" cols="50" placeholder="Enter your secret message" required></textarea><br>
+            <button type="submit">Encode</button>
+        </form>
+
+        <h2>Decode a Message</h2>
+        <form action="/decode" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required><br>
+            <button type="submit">Decode</button>
+        </form>
+    </div>
+</body>
+</html>
